@@ -2,10 +2,10 @@ import { Container, Grid, Paper } from '@mui/material'
 import SeeNotice from '../../components/SeeNotice';
 import CountUp from 'react-countup';
 import styled from 'styled-components';
-import Students from "../../assets/img1.png";
-import Lessons from "../../assets/subjects.svg";
-import Tests from "../../assets/assignment.svg";
-import Time from "../../assets/time.svg";
+import Students from "../../assets/books.png";
+import Lessons from "../../assets/lesson.png";
+import Tests from "../../assets/exam.png";
+import Time from "../../assets/time.png";
 import { getClassStudents, getSubjectDetails } from '../../redux/sclassRelated/sclassHandle';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -33,7 +33,7 @@ const TeacherHomePage = () => {
                 <Grid container spacing={3}>
                     <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Students} alt="Students" />
+                            <img width={100} height={100} src={Students} alt="Students" />
                             <Title>
                                 Class Students
                             </Title>
@@ -42,7 +42,7 @@ const TeacherHomePage = () => {
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Lessons} alt="Lessons" />
+                            <img width={100} height={100} src={Lessons} alt="Lessons" />
                             <Title>
                                 Total Lessons
                             </Title>
@@ -51,7 +51,7 @@ const TeacherHomePage = () => {
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Tests} alt="Tests" />
+                            <img width={100} height={100} src={Tests} alt="Tests" />
                             <Title>
                                 Tests Taken
                             </Title>
@@ -60,7 +60,7 @@ const TeacherHomePage = () => {
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Time} alt="Time" />
+                            <img width={100} height={100} src={Time} alt="Time" />
                             <Title>
                                 Total Hours
                             </Title>

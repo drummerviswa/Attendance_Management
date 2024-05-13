@@ -15,12 +15,12 @@ const TableTemplate = ({ buttonHaver: ButtonHaver, columns, rows }) => {
                                 <StyledTableCell
                                     key={column.id}
                                     align={column.align}
-                                    style={{ minWidth: column.minWidth }}
+                                    style={{ minWidth: column.minWidth,background:"#1C1678" }}
                                 >
                                     {column.label}
                                 </StyledTableCell>
                             ))}
-                            <StyledTableCell align="center">
+                            <StyledTableCell style={{backgroundColor:"#1C1678"}} align="center">
                                 Actions
                             </StyledTableCell>
                         </StyledTableRow>
@@ -34,7 +34,7 @@ const TableTemplate = ({ buttonHaver: ButtonHaver, columns, rows }) => {
                                         {columns.map((column) => {
                                             const value = row[column.id];
                                             return (
-                                                <StyledTableCell key={column.id} align={column.align}>
+                                                <StyledTableCell style={{fontSize:18}} key={column.id} align={column.align}>
                                                     {
                                                         column.format && typeof value === 'number'
                                                             ? column.format(value)

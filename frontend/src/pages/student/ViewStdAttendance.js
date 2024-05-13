@@ -70,11 +70,11 @@ const ViewStdAttendance = () => {
                 <Table>
                     <TableHead>
                         <StyledTableRow>
-                            <StyledTableCell>Subject</StyledTableCell>
-                            <StyledTableCell>Present</StyledTableCell>
-                            <StyledTableCell>Total Sessions</StyledTableCell>
-                            <StyledTableCell>Attendance Percentage</StyledTableCell>
-                            <StyledTableCell align="center">Actions</StyledTableCell>
+                            <StyledTableCell style={{backgroundColor:"darkblue"}}>Subject</StyledTableCell>
+                            <StyledTableCell style={{backgroundColor:"darkblue"}}>Present</StyledTableCell>
+                            <StyledTableCell style={{backgroundColor:"darkblue"}}>Total Sessions</StyledTableCell>
+                            <StyledTableCell style={{backgroundColor:"darkblue"}}>Attendance Percentage</StyledTableCell>
+                            <StyledTableCell style={{backgroundColor:"darkblue"}} align="center">Actions</StyledTableCell>
                         </StyledTableRow>
                     </TableHead>
                     {Object.entries(attendanceBySubject).map(([subName, { present, allData, subId, sessions }], index) => {

@@ -62,6 +62,8 @@ export const PurpleButton = styled(Button)`
 export const LightPurpleButton = styled(Button)`
   && {
     background-color: #7f56da;
+    padding:10px 30px;
+    border-radius:5px;
     color: #fff;
     &:hover {
       background-color: #7a1ccb;

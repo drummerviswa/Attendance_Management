@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Grid, Box, Button } from '@mui/material';
 import styled from 'styled-components';
-import Students from "../assets/students.svg";
+import Students from "../assets/gr.png";
 import { LightPurpleButton } from '../components/buttonStyles';
 
 const Homepage = () => {
     return (
         <StyledContainer>
-            <Grid container spacing={0}>
+            <Grid style={{flex:1,justifyItems:"center",alignItems:"center"}} container spacing={0}>
                 <Grid item xs={12} md={6}>
                     <img src={Students} alt="students" style={{ width: '100%' }} />
                 </Grid>
@@ -17,9 +17,9 @@ const Homepage = () => {
                         <StyledTitle>
                             Welcome to
                             <br />
-                            School Management
+                            Student Attendance 
                             <br />
-                            System
+                            Management System
                         </StyledTitle>
                         <StyledText>
                             Streamline school management, class organization, and add students and faculty.
@@ -41,7 +41,7 @@ const Homepage = () => {
                             </StyledLink>
                             <StyledText>
                                 Don't have an account?{' '}
-                                <Link to="/Adminregister" style={{color:"#550080"}}>
+                                <Link to="/Adminregister" style={{color:"#7469B6",textDecoration:"underline"}}>
                                     Sign up
                                 </Link>
                             </StyledText>
@@ -52,7 +52,6 @@ const Homepage = () => {
         </StyledContainer>
     );
 };
-
 export default Homepage;
 
 const StyledContainer = styled(Container)`

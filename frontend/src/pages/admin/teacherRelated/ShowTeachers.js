@@ -45,14 +45,14 @@ const ShowTeachers = () => {
     }
 
     const deleteHandler = (deleteID, address) => {
-        console.log(deleteID);
-        console.log(address);
-        setMessage("Sorry the delete function has been disabled for now.")
-        setShowPopup(true)
+        // console.log(deleteID);
+        // console.log(address);
+        // setMessage("Sorry the delete function has been disabled for now.")
+        // setShowPopup(true)
 
-        // dispatch(deleteUser(deleteID, address)).then(() => {
-        //     dispatch(getAllTeachers(currentUser._id));
-        // });
+        dispatch(deleteUser(deleteID, address)).then(() => {
+            dispatch(getAllTeachers(currentUser._id));
+        });
     };
 
     const columns = [
@@ -92,12 +92,12 @@ const ShowTeachers = () => {
                                 <StyledTableCell
                                     key={column.id}
                                     align={column.align}
-                                    style={{ minWidth: column.minWidth }}
+                                    style={{ minWidth: column.minWidth,backgroundColor:"#1C1678"}}
                                 >
                                     {column.label}
                                 </StyledTableCell>
                             ))}
-                            <StyledTableCell align="center">
+                            <StyledTableCell  style={{backgroundColor:"#1C1678"}} align="center">
                                 Actions
                             </StyledTableCell>
                         </StyledTableRow>
@@ -107,7 +107,7 @@ const ShowTeachers = () => {
                             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                             .map((row) => {
                                 return (
-                                    <StyledTableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                                    <StyledTableRow style={{fontSize:18}} hover role="checkbox" tabIndex={-1} key={row.id}>
                                         {columns.map((column) => {
                                             const value = row[column.id];
                                             if (column.id === 'teachSubject') {

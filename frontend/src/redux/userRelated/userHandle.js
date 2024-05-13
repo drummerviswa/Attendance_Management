@@ -13,11 +13,12 @@ import {
     getError,
 } from './userSlice';
 
+const REACT_APP_BASE_URL = "http://localhost:5000";
 export const loginUser = (fields, role) => async (dispatch) => {
     dispatch(authRequest());
 
     try {
-        const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/${role}Login`, fields, {
+        const result = await axios.post(`${REACT_APP_BASE_URL}/${role}Login`, fields, {
             headers: { 'Content-Type': 'application/json' },
         });
         if (result.data.role) {
@@ -34,7 +35,7 @@ export const registerUser = (fields, role) => async (dispatch) => {
     dispatch(authRequest());
 
     try {
-        const result = await axios.post(`${process.env.REACT_APP_BASE_URL}/${role}Reg`, fields, {
+        const result = await axios.post(`${REACT_APP_BASE_URL}/${role}Reg`, fields, {
             headers: { 'Content-Type': 'application/json' },
         });
         if (result.data.schoolName) {
@@ -68,26 +69,26 @@ export const getUserDetails = (id, address) => async (dispatch) => {
     }
 }
 
-// export const deleteUser = (id, address) => async (dispatch) => {
-//     dispatch(getRequest());
-
-//     try {
-//         const result = await axios.delete(`${process.env.REACT_APP_BASE_URL}/${address}/${id}`);
-//         if (result.data.message) {
-//             dispatch(getFailed(result.data.message));
-//         } else {
-//             dispatch(getDeleteSuccess());
-//         }
-//     } catch (error) {
-//         dispatch(getError(error));
-//     }
-// }
-
-
 export const deleteUser = (id, address) => async (dispatch) => {
     dispatch(getRequest());
-    dispatch(getFailed("Sorry the delete function has been disabled for now."));
+
+    try {
+        const result = await axios.delete(`${process.env.REACT_APP_BASE_URL}/${address}/${id}`);
+        if (result.data.message) {
+            dispatch(getFailed(result.data.message));
+        } else {
+            dispatch(getDeleteSuccess());
+        }
+    } catch (error) {
+        dispatch(getError(error));
+    }
 }
+
+
+// export const deleteUser = (id, address) => async (dispatch) => {
+//     dispatch(getRequest());
+//     dispatch(getFailed("Sorry the delete function has been disabled for now."));
+// }
 
 export const updateUser = (fields, id, address) => async (dispatch) => {
     dispatch(getRequest());

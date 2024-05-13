@@ -5,6 +5,8 @@ import { Button, Grid, Box, Typography, Paper, Checkbox, FormControlLabel, TextF
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import bgpic from "../assets/designlogin.jpg"
+import bgpic1 from "../assets/hielephant.png"
+import bgpic2 from "../assets/wallburst.png"
 import { LightPurpleButton } from '../components/buttonStyles';
 import styled from 'styled-components';
 import { loginUser } from '../redux/userRelated/userHandle';
@@ -255,13 +257,15 @@ const LoginPage = ({ role }) => {
                         </Box>
                     </Box>
                 </Grid>
+                {role === "Student"}
                 <Grid
                     item
                     xs={false}
                     sm={4}
                     md={7}
                     sx={{
-                        backgroundImage: `url(${bgpic})`,
+                        
+                        backgroundImage: `url(${role==="Student"?bgpic:role=="Admin"?bgpic1:bgpic2})`,
                         backgroundRepeat: 'no-repeat',
                         backgroundColor: (t) =>
                             t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
