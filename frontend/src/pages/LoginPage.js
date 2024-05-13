@@ -76,23 +76,23 @@ const LoginPage = ({ role }) => {
     };
 
     const guestModeHandler = () => {
-        const password = "zxc"
+        const password = "Viswa@3010"
 
         if (role === "Admin") {
-            const email = "yogendra@12"
+            const email = "drummerviswa@gmail.com"
             const fields = { email, password }
             setGuestLoader(true)
             dispatch(loginUser(fields, role))
         }
         else if (role === "Student") {
             const rollNum = "1"
-            const studentName = "Dipesh Awasthi"
+            const studentName = "Viswanathan"
             const fields = { rollNum, studentName, password }
             setGuestLoader(true)
             dispatch(loginUser(fields, role))
         }
         else if (role === "Teacher") {
-            const email = "tony@12"
+            const email = "sabapathi@annauniv.edu"
             const fields = { email, password }
             setGuestLoader(true)
             dispatch(loginUser(fields, role))
@@ -168,7 +168,6 @@ const LoginPage = ({ role }) => {
                                         label="Enter your name"
                                         name="studentName"
                                         autoComplete="name"
-                                        autoFocus
                                         error={studentNameError}
                                         helperText={studentNameError && 'Name is required'}
                                         onChange={handleInputChange}
